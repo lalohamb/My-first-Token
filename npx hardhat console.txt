@@ -1,0 +1,221 @@
+lalo@lalo-OptiPlex-9010ai:~/Mentorship/WK2/blockchain-developer-bootcamp$ npx hardhat console --network localhost 
+Welcome to Node.js v18.13.0.
+Type ".help" for more information.
+> const token = await ethers getContractAt("Token", "0x5fbdb2315678afecb367f032d93f642f64180aa3")
+Uncaught SyntaxError: 
+const token = await ethers getContractAt("Token", "0x5fbdb2315678afecb367f032d93f642f64180aa3")
+                           ^
+
+Unexpected token 'g'
+> const token = await ethers.getContractAt("Token", "0x5fbdb2315678afecb367f032d93f642f64180aa3")
+undefined
+> token.name
+[Function (anonymous)]
+> token.address
+'0x5fbdb2315678afecb367f032d93f642f64180aa3'
+> token.name
+[Function (anonymous)]
+> token
+Contract {
+  interface: Interface {
+    fragments: [ [FunctionFragment], [FunctionFragment] ],
+    _abiCoder: AbiCoder { coerceFunc: null },
+    functions: { 'name()': [FunctionFragment], 'symbol()': [FunctionFragment] },
+    errors: {},
+    events: {},
+    structs: {},
+    deploy: ConstructorFragment {
+      name: null,
+      type: 'constructor',
+      inputs: [],
+      payable: false,
+      stateMutability: 'nonpayable',
+      gas: null,
+      _isFragment: true
+    },
+    _isInterface: true
+  },
+  provider: EthersProviderWrapper {
+    _isProvider: true,
+    _events: [],
+    _emitted: { block: -2 },
+    disableCcipRead: false,
+    formatter: Formatter { formats: [Object] },
+    anyNetwork: false,
+    _networkPromise: Promise {
+      [Object],
+      [Symbol(async_id_symbol)]: 94,
+      [Symbol(trigger_async_id_symbol)]: 88
+    },
+    _maxInternalBlockNumber: -1024,
+    _lastBlockNumber: -2,
+    _maxFilterBlockRange: 10,
+    _pollingInterval: 4000,
+    _fastQueryDate: 0,
+    connection: { url: 'http://localhost:8545' },
+    _nextId: 42,
+    _hardhatProvider: LazyInitializationProviderAdapter {
+      _providerFactory: [AsyncFunction (anonymous)],
+      _emitter: [EventEmitter],
+      _initializingPromise: [Promise],
+      provider: [BackwardsCompatibilityProviderAdapter]
+    },
+    _eventLoopCache: { detectNetwork: null },
+    _network: { chainId: 31337, name: 'unknown' }
+  },
+  signer: SignerWithAddress {
+    _isSigner: true,
+    address: '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266',
+    _signer: JsonRpcSigner {
+      _isSigner: true,
+      provider: [EthersProviderWrapper],
+      _address: '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266',
+      _index: null
+    },
+    provider: EthersProviderWrapper {
+      _isProvider: true,
+      _events: [],
+      _emitted: [Object],
+      disableCcipRead: false,
+      formatter: [Formatter],
+      anyNetwork: false,
+      _networkPromise: [Promise],
+      _maxInternalBlockNumber: -1024,
+      _lastBlockNumber: -2,
+      _maxFilterBlockRange: 10,
+      _pollingInterval: 4000,
+      _fastQueryDate: 0,
+      connection: [Object],
+      _nextId: 42,
+      _hardhatProvider: [LazyInitializationProviderAdapter],
+      _eventLoopCache: [Object],
+      _network: [Object]
+    }
+  },
+  callStatic: {
+    'name()': [Function (anonymous)],
+    'symbol()': [Function (anonymous)],
+    name: [Function (anonymous)],
+    symbol: [Function (anonymous)]
+  },
+  estimateGas: {
+    'name()': [Function (anonymous)],
+    'symbol()': [Function (anonymous)],
+    name: [Function (anonymous)],
+    symbol: [Function (anonymous)]
+  },
+  functions: {
+    'name()': [Function (anonymous)],
+    'symbol()': [Function (anonymous)],
+    name: [Function (anonymous)],
+    symbol: [Function (anonymous)]
+  },
+  populateTransaction: {
+    'name()': [Function (anonymous)],
+    'symbol()': [Function (anonymous)],
+    name: [Function (anonymous)],
+    symbol: [Function (anonymous)]
+  },
+  filters: {},
+  _runningEvents: {},
+  _wrappedEmits: {},
+  address: '0x5fbdb2315678afecb367f032d93f642f64180aa3',
+  resolvedAddress: Promise {
+    '0x5FbDB2315678afecb367f032d93F642f64180aa3',
+    [Symbol(async_id_symbol)]: 1062,
+    [Symbol(trigger_async_id_symbol)]: 832
+  },
+  'name()': [Function (anonymous)],
+  'symbol()': [Function (anonymous)],
+  name: [Function (anonymous)],
+  symbol: [Function (anonymous)]
+}
+> await token.name
+[Function (anonymous)]
+> await token.name()
+'My First Token'
+> const accounts = await ethers.getsignors()
+Uncaught TypeError: ethers.getsignors is not a function
+    at REPL70:1:60
+> const accounts = await ethers.getSigners()
+Uncaught SyntaxError: Identifier 'accounts' has already been declared
+> const account = await ethers.getSigners()
+undefined
+> accoun[0]
+Uncaught ReferenceError: accoun is not defined
+> account[0]
+SignerWithAddress {
+  _isSigner: true,
+  address: '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266',
+  _signer: JsonRpcSigner {
+    _isSigner: true,
+    provider: EthersProviderWrapper {
+      _isProvider: true,
+      _events: [],
+      _emitted: [Object],
+      disableCcipRead: false,
+      formatter: [Formatter],
+      anyNetwork: false,
+      _networkPromise: [Promise],
+      _maxInternalBlockNumber: -1024,
+      _lastBlockNumber: -2,
+      _maxFilterBlockRange: 10,
+      _pollingInterval: 4000,
+      _fastQueryDate: 0,
+      connection: [Object],
+      _nextId: 42,
+      _hardhatProvider: [LazyInitializationProviderAdapter],
+      _eventLoopCache: [Object],
+      _network: [Object]
+    },
+    _address: '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266',
+    _index: null
+  },
+  provider: EthersProviderWrapper {
+    _isProvider: true,
+    _events: [],
+    _emitted: { block: -2 },
+    disableCcipRead: false,
+    formatter: Formatter { formats: [Object] },
+    anyNetwork: false,
+    _networkPromise: Promise {
+      [Object],
+      [Symbol(async_id_symbol)]: 94,
+      [Symbol(trigger_async_id_symbol)]: 88
+    },
+    _maxInternalBlockNumber: -1024,
+    _lastBlockNumber: -2,
+    _maxFilterBlockRange: 10,
+    _pollingInterval: 4000,
+    _fastQueryDate: 0,
+    connection: { url: 'http://localhost:8545' },
+    _nextId: 42,
+    _hardhatProvider: LazyInitializationProviderAdapter {
+      _providerFactory: [AsyncFunction (anonymous)],
+      _emitter: [EventEmitter],
+      _initializingPromise: [Promise],
+      provider: [BackwardsCompatibilityProviderAdapter]
+    },
+    _eventLoopCache: { detectNetwork: null },
+    _network: { chainId: 31337, name: 'unknown' }
+  }
+}
+> account[0].address
+'0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266'
+> accounts[0].address
+Uncaught TypeError: Cannot read properties of undefined (reading '0')
+> ethers.provider.getBalance(account[0].address)
+Promise {
+  <pending>,
+  [Symbol(async_id_symbol)]: 2828,
+  [Symbol(trigger_async_id_symbol)]: 13
+}
+> const balance = await ethers.provider.getBalance(account[0].address)
+undefined
+> balance
+BigNumber { value: "9999999784455124753663" }
+> balance.toString()
+'9999999784455124753663'
+> ethers.utils.formatEther(balance.toString())
+'9999.999784455124753663'
+> .exit
